@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home/Home';
 import RepoList from './components/RepoList/RepoList';
+import Repo from './components/Repo/Repo';
 import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
 
@@ -17,7 +18,10 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/repos" element={<RepoList />} />
+          <Route path="/repos">
+            <Route index element={<RepoList />} />
+            <Route path=":repo" element={<Repo />} />
+          </Route>
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
