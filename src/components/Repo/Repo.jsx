@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import NotFound from '../NotFound/NotFound';
 
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
@@ -8,6 +9,7 @@ import './repo.css';
 const Repo = () => {
   const [repoDetails, setRepoDetails] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
   const repoName = useParams();
 
@@ -25,6 +27,9 @@ const Repo = () => {
       if (response.status === 200) {
         setRepoDetails(fecthedRepoDetails);
         setIsLoading(false);
+      } else {
+        setNotFound(true);
+        setIsLoading(false);
       }
     } catch (error) {
       console.log('Something went wrong', error);
@@ -33,12 +38,14 @@ const Repo = () => {
 
   useEffect(() => {
     fecthRepo();
-  });
+  }, []);
 
   return (
     <>
       {isLoading ? (
         <LoadingSpinner />
+      ) : notFound ? (
+        <NotFound />
       ) : (
         <div className="repo-container">
           <div className="repo-details">
