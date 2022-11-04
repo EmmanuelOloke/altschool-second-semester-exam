@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar';
 import Home from './components/Home/Home';
 import RepoList from './components/RepoList/RepoList';
 import Repo from './components/Repo/Repo';
@@ -10,11 +11,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <nav>
-          <Link to="/"> Home </Link>
-          <Link to="repos"> Repos </Link>
-          <Link to="about"> About </Link>
-        </nav>
+        <NavBar />
 
         <Routes>
           <Route path="/" element={<Home />} />

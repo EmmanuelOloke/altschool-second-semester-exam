@@ -41,7 +41,7 @@ const RepoList = () => {
 
   return (
     <React.Fragment>
-      <h1>GitHub Repo List</h1>
+      <h1 className="title">GitHub Repo List</h1>
 
       {isLoading ? <h1>Loading...</h1> : <div className="each-repo">{eachRepo}</div>}
     </React.Fragment>

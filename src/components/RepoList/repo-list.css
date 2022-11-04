@@ -1,3 +1,9 @@
+.title {
+    color: #4078c0;
+    text-transform: uppercase;
+    margin-top: 5rem;
+}
+
 .repo-card {
     display: flex;
     flex-direction: column;
