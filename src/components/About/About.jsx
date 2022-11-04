@@ -18,7 +18,7 @@ const About = () => {
               className="about-links"
               rel="noreferrer"
               target="_blank"
-              href="https://linkedin.com/in/emmanuel-oloke"
+              href="https://emmanueloloke.dev"
             >
               Emmanuel Oloke
             </a>{' '}
@@ -47,18 +47,18 @@ const About = () => {
                 className="about-links"
                 rel="noreferrer"
                 target="_blank"
-                href="https://twitter.com/I_am_Pope"
+                href="https://linkedin.com/in/emmanuel-oloke"
               >
-                Twitter
+                LinkedIn
               </a>{' '}
               or{' '}
               <a
                 className="about-links"
                 rel="noreferrer"
                 target="_blank"
-                href="https://instagram.com/popeemmanuel"
+                href="https://twitter.com/I_am_Pope"
               >
-                Instagram
+                Twitter
               </a>
             </div>
           </div>
