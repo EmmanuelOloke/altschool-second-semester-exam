@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 import './repo-list.css';
 
 const RepoList = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [page, setPage] = useState(1);
+  //   const [page, setPage] = useState(1);
   const [repos, setRepos] = useState([]);
 
   const fetchRepos = async () => {
@@ -43,7 +44,7 @@ const RepoList = () => {
     <React.Fragment>
       <h1 className="title">GitHub Repo List</h1>
 
-      {isLoading ? <h1>Loading...</h1> : <div className="each-repo">{eachRepo}</div>}
+      {isLoading ? <LoadingSpinner /> : <div className="each-repo">{eachRepo}</div>}
     </React.Fragment>
   );
 };

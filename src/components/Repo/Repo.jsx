@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+
 import './repo.css';
 
 const Repo = () => {
@@ -30,12 +32,12 @@ const Repo = () => {
 
   useEffect(() => {
     fecthRepo();
-  }, []);
+  });
 
   return (
     <>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <LoadingSpinner />
       ) : (
         <div className="repo-container">
           <div className="repo-details">
