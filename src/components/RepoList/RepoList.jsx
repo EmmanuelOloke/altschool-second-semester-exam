@@ -1,14 +1,17 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import Repos from '../Repos/Repos';
+import Pagination from '../Pagination/Pagination';
 
 import './repo-list.css';
 
 const RepoList = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  //   const [page, setPage] = useState(1);
   const [repos, setRepos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [reposPerPage] = useState(9);
+
+  const totalRepos = repos.length;
 
   const fetchRepos = async () => {
     try {
@@ -26,25 +29,27 @@ const RepoList = () => {
     fetchRepos();
   }, []);
 
-  const eachRepo = repos.map((repo, index) => {
-    return (
-      <div className="repo-card" key={repo.id}>
-        <div>{repo.name}</div>
-
-        <Link className="link" to={`/repos/${repo.name}`} key={index}>
-          <button href="#" className="btn">
-            View More
-          </button>
-        </Link>
-      </div>
-    );
-  });
+  // Get current post
+  const indexOfLastRepo = currentPage * reposPerPage;
+  const indexOfFirstRepo = indexOfLastRepo - reposPerPage;
+  const currentRepos = repos.slice(indexOfFirstRepo, indexOfLastRepo);
 
   return (
     <React.Fragment>
       <h1 className="title">GitHub Repo List</h1>
 
-      {isLoading ? <LoadingSpinner /> : <div className="each-repo">{eachRepo}</div>}
+      <div className="each-repo">
+        <Repos repos={currentRepos} isLoading={isLoading} />
+      </div>
+
+      <Pagination
+        className="pagination"
+        reposPerPage={reposPerPage}
+        totalRepos={totalRepos}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        isLoading={isLoading}
+      />
     </React.Fragment>
   );
 };

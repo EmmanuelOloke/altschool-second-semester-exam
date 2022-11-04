@@ -22,9 +22,10 @@ const Repo = () => {
       const response = await fetch(`https://api.github.com/repos/EmmanuelOloke/${repoName.repo}`);
       const fecthedRepoDetails = await response.json();
 
-      setRepoDetails(fecthedRepoDetails);
-
-      setIsLoading(false);
+      if (response.status === 200) {
+        setRepoDetails(fecthedRepoDetails);
+        setIsLoading(false);
+      }
     } catch (error) {
       console.log('Something went wrong', error);
     }
