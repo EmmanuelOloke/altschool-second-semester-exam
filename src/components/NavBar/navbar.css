@@ -22,6 +22,11 @@
     display: flex;
     gap: 1rem;
   }
+
+  .nav-links > button {
+    border: none;
+    cursor: pointer;
+  }
   
   .nav-link {
     font-weight: bold;

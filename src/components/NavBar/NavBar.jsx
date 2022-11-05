@@ -1,8 +1,16 @@
 import React from 'react';
 
+import { useState } from 'react';
+
 import './navbar.css';
 
 const NavBar = () => {
+  const [error, setError] = useState(false);
+
+  if (error) {
+    throw Error('Testing the Error Boundary');
+  }
+
   return (
     <div className="navbar">
       <div className="navbar-content">
@@ -20,6 +28,9 @@ const NavBar = () => {
           <a className="nav-link" href="/about">
             About
           </a>
+          <button style={{ fontSize: '1rem' }} className="nav-link" onClick={() => setError(true)}>
+            Error
+          </button>
         </div>
       </div>
     </div>

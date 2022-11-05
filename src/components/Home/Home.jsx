@@ -35,8 +35,8 @@ const Home = () => {
               rel="noreferrer"
             >
               GitHub profile
-            </a>
-            . and{' '}
+            </a>{' '}
+            and{' '}
             <a
               className="repos-link"
               href="https://emmanueloloke.dev"
