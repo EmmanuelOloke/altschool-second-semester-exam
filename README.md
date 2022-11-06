@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Solved Exam Question 1
 
-In this project, I used fetchAPI to make calls to GitHub API to get a list of repos connected to my username [Here](https://api.github.com/users/EmmanuelOloke/repos) and another [Here](https://api.github.com/repos/{user_name}/{repo_name}) to get a single repo. Manipulated the data appropriately to get desired results.
+In this project, I used fetchAPI to make calls to GitHub API to get a list of repos connected to my username [Here](https://api.github.com/users/EmmanuelOloke/repos) and another [Here](https://api.github.com/repos/EmmanuelOloke/altschool-second-semester-exam) to get a single repo. Manipulated the data appropriately to get desired results.
 
 ## Vercel Hosted Live Link
 
