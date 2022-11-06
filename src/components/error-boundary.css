@@ -43,3 +43,14 @@ img {
     border: 2px solid #8c9095;
 }
 
+@media screen and (max-width: 768px) {
+    .error-boundary-container {
+      flex-direction: column;
+      width: 19rem;
+      padding: 2rem;
+    }
+  
+    img {
+      width: 12rem;
+    }
+  }
