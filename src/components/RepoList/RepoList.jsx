@@ -13,6 +13,10 @@ const RepoList = () => {
 
   const totalRepos = repos.length;
 
+  const indexOfLastRepo = currentPage * reposPerPage;
+  const indexOfFirstRepo = indexOfLastRepo - reposPerPage;
+  const currentRepos = repos.slice(indexOfFirstRepo, indexOfLastRepo);
+
   const fetchRepos = async () => {
     try {
       const response = await fetch('https://api.github.com/users/EmmanuelOloke/repos');
@@ -28,11 +32,6 @@ const RepoList = () => {
   useEffect(() => {
     fetchRepos();
   }, []);
-
-  // Get current post
-  const indexOfLastRepo = currentPage * reposPerPage;
-  const indexOfFirstRepo = indexOfLastRepo - reposPerPage;
-  const currentRepos = repos.slice(indexOfFirstRepo, indexOfLastRepo);
 
   return (
     <React.Fragment>
