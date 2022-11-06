@@ -52,3 +52,20 @@
       width: 12rem;
     }
   }
+
+  @media screen and (max-width: 425px) {
+    .about-content {
+      width: 22rem;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .about-content {
+      width: 17rem;
+      height: 27rem;
+    }
+
+    .about-text {
+      width: 15rem;
+    }
+  }
