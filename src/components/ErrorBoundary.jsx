@@ -24,7 +24,11 @@ class ErrorBoundary extends Component {
             <img src={Broken} alt="broke app" />
             <div className="error-boundary-text">
               <h1>ErrorBoundary Test</h1>
-              <h2 style={{ marginBottom: '3rem' }}>App Successfully Broken</h2>
+              <h2 style={{ marginBottom: '1rem' }}>App Successfully Broken</h2>
+              <h5 style={{ marginBottom: '2rem', width: '20rem', color: '#8c9095' }}>
+                Please check the console to see error and use React Dev Tools to confirm that all
+                components have been unmounted.
+              </h5>
               <a href="/" className="error-btn">
                 Return Home
               </a>
