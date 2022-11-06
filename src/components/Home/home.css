@@ -18,7 +18,7 @@
     gap: 2rem;
   }
   
-  .files {
+  .dev-icon {
     width: 20rem;
   }
   
@@ -46,9 +46,52 @@
     .home-content {
       flex-direction: column-reverse;
       width: 25rem;
+      height: 30rem;
+      margin-top: 5rem;
     }
   
-    .files {
+    .dev-icon {
       width: 12rem;
     }
+  }
+
+  @media screen and (max-width: 425px) {
+    .home-content {
+      width: 22rem;
+      height: 33rem;
+      margin-top: 5rem;
+    }
+
+    .home-title {
+      font-size: 1.3rem;
+    }
+
+    .text {
+      width: 19rem;
+    }
+
+    .dev-icon {
+      width: 10rem;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .home-content {
+      width: 18rem;
+      height: 33rem;
+      margin-top: 5rem;
+    }
+
+    .home-title {
+      font-size: 1.2rem;
+    }
+
+    .text {
+      width: 17rem;
+    }
+
+    .dev-icon {
+      width: 10rem;
+    }
+    
   }

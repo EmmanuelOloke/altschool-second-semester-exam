@@ -14,9 +14,9 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <div className="navbar-content">
-        <div>
+        <a href="/" style={{ textDecoration: 'none' }}>
           <div className="nav-logo">Repo List</div>
-        </div>
+        </a>
 
         <div className="nav-links">
           <a className="nav-link" href="/">
@@ -28,7 +28,7 @@ const NavBar = () => {
           <a className="nav-link" href="/about">
             About
           </a>
-          <button style={{ fontSize: '1rem' }} className="nav-link" onClick={() => setError(true)}>
+          <button className="nav-link" onClick={() => setError(true)}>
             Error
           </button>
         </div>

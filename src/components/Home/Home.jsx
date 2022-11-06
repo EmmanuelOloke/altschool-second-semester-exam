@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="home-content">
-        <img className="files" src={Dev} alt="files" />
+        <img className="dev-icon" src={Dev} alt="dev icon" />
 
         <div>
           <div className="home-title">GitHub Repo List</div>
